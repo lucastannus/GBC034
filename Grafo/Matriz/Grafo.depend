@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1495495577 source:c:\users\jorge\documents\java\grafo\grafo.c
+	<stdio.h>
+	"grafo.h"
+
+1495495495 c:\users\jorge\documents\java\grafo\grafo.h
+
+1495495389 source:c:\users\jorge\documents\java\grafo\main.c
+	<stdio.h>
+	"grafo.h"
+
+1495496196 source:c:\users\jorge\documents\java\grafo\matriz\main.c
+	<stdio.h>
+	"grafo.h"
+
+1495495495 c:\users\jorge\documents\java\grafo\matriz\grafo.h
+
+1495506278 source:c:\users\jorge\documents\java\grafo\matriz\grafo.c
+	<stdio.h>
+	"grafo.h"
+
