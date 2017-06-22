@@ -168,3 +168,40 @@ void mostra_grafo(Grafo *G){
         }
     }
 }
+
+int DFS( Grafo *G, int v1, int *vis){
+	 if(G == NULL || V1 < 0 || V1 >= G->qt_verts ) return -1;	
+	if(vis[v1]==1){
+		return 0;
+	}
+	vis[v1]=1;
+	// faca a operacao necesaria
+	No *aux=G->aresta[v1];
+	while(aux!=NULL){
+		DFS(G, aux->vertice, vis);
+		aux=aux->prox;
+	}
+	return 1;
+}
+
+int BFS (Grafo *G, int v){
+	int vis[G->qt_verts], ini=0, fim=0, fila[G->qt_verts]; 	
+	memset(vis, 0, sizeof(vis));
+	fila[fim]=v;
+	fim++;
+	vis[v]=1;	
+	// faca a opercao necessaria
+	while(fim!=ini){
+		No *aux=G->aresta[v];
+		while(aux!=NULL){
+			if(!vis[aux->vertice]){
+				vis[aux->vertice]=1;
+				// faca a opercao nec
+				fila[fim]=aux->vertice;			
+				fim++;
+			}
+		}
+	}
+}
+
+
