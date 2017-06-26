@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <limits.h>
 #include "grafo.h"
 #include "fila.h"
@@ -166,7 +167,68 @@ void mostra_adjacentes(Grafo *G, int V){
     }
 }
 
-//Menor caminho é calculado com base no peso M (parametro)
+void busca_profudidade(Grafo *G, int V, int *visitado){
+    int i;
+    visitado[V] = 1;
+    printf("%d ", V);
+    for(i = 0; i < G->qt_vertices; i++){
+        if(verifica_aresta(G, V, i) == 1 && !visitado[i])
+            busca_profudidade(G, i, visitado);
+    }
+}
+
+void DFS(Grafo *G, int V){
+    if(G == NULL || V < 0 || V >= G->qt_vertices){
+        printf("Erro.\n");
+        return;
+    }
+    int *visitado = (int *)calloc(G->qt_vertices, sizeof(int));
+    if(visitado == NULL){
+        printf("Erro.\n");
+        return;
+    }
+    printf("Ordem de visita: ");
+    busca_profudidade(G, V, visitado);
+    printf("\n");
+    free(visitado);
+}
+
+void busca_largura(Grafo *G, int V){
+    if(G == NULL || V < 0 || V >= G->qt_vertices){
+        printf("Erro.\n");
+        return;
+    }
+    int *visitado = (int *)calloc(G->qt_vertices, sizeof(int));
+    if(visitado == NULL){
+        printf("Erro.\n");
+        return;
+    }
+    Fila *f = cria_fila();
+    if(f == NULL){
+        printf("Erro.\n");
+        return;
+    }
+    int i, head;
+    visitado[V] = 1;
+    printf("Ordem de visita: %d ", V);
+    enfileira(f, V);
+    while(!fila_vazia(f)){
+        head = cabeca(f);
+        desenfileira(f);
+        for(i = 0; i < G->qt_vertices; i++){
+            if(verifica_aresta(G, head, i) == 1 && !visitado[i]){
+                visitado[i] = 1;
+                printf("%d ", i);
+                enfileira(f, i);
+            }
+        }
+    }
+    printf("\n");
+    free(visitado);
+    libera_fila(f);
+}
+
+//Menor caminho Ã© calculado com base no peso M (parametro)
 Aresta *dijkstra(Grafo *G, int V, char M, int **A){
     if(G == NULL || V < 0 || V >= G->qt_vertices)
         return NULL;
@@ -351,7 +413,7 @@ void mostra_caminho(int V1, int V2, int *A){
         printf("%d ", V2);
     }
 }
-//Recebe grafo, origem, vetor de receptores, tamanho do vetor de receptores e peso-referência
+//Recebe grafo, origem, vetor de receptores, tamanho do vetor de receptores e peso-referÃªncia
 void arvores_multicast(Grafo *G, int V, char M, int tam, int *R, int n){
     int *A, i;
     int custo, D_max;
