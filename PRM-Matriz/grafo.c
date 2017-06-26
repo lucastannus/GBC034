@@ -85,6 +85,9 @@ int insere_aresta(Grafo *G, int V1, int V2, int C, int D, int Z, int T){
     if(G == NULL || V1 < 0 || V1 >= G->qt_vertices || V2 < 0 || V2 >= G->qt_vertices)
         return -1;
 
+    if(C <= 0 || D <= 0 || Z <= 0 || T <= 0)
+        return -1;
+
     if(verifica_aresta(G, V1, V2) == 1)
         return 0;
 
