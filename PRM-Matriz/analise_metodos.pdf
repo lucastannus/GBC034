@@ -1,0 +1,18 @@
+1 - Custo total da árvore.
+Para realizar esse método podemos começar a percorrer a partir de qualquer vértices que não afetará o percorrimento , 
+uma vez que o grafo é conexo e todos as arestas precisam ser visitados para contar o peso total do grafo. 
+Nesse cálculo, só é utilizado o peso c, por isso os outros não interferem, nem são necessários nesse momento.
+O tamanho da mensagem não influencia.
+
+2 - Delay fim-a-fim máximo
+Esse método possui diferença com relação de qual vértice devemos começar, uma vez que o grafo não possui pesos negativos, 
+podemos concluir que o maior caminho sempre se inicia e finaliza em alguma extremidade do grafo, pois é o maior caminho
+com relação a número de vértices e por isso tem maior chance de ser o maior caminho com relação aos pesos. 
+Para obter essa informação só ultilizamos a métrica d, que significa o Delay, os outros são desprezados pois não
+afetam essa busca.Caso o grafo seja cíclico não faz diferença onde o buscador começa. O tamanho da mensagem não influencia.
+
+3- Utilização máxima do enlace
+Podemos observar que nesse método o tamanho da mensagem influencia em como desenvolveremos a aplicação, além disso
+o tráfego e a capacidade ( z(e) e   t(e) ). O vértice escolhido para dar início altera o algoritmo pois buscamos uma informação
+específica, ou seja, busca de um vértice para outro(s). O número de pontos emissores recepctores aumenta o tempo do
+algoritmo uma vez que precisariam ser feitas n buscas.
