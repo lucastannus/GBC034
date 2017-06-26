@@ -3,8 +3,7 @@
 
 int main(){
     Grafo *g = cria_grafo(15);
-    int *R;
-    R = (int *)malloc(4 * sizeof(int));
+    int R[4];
     R[0] = 1;
     R[1] = 8;
     R[2] = 12;
@@ -28,10 +27,9 @@ int main(){
     insere_aresta(g, 11, 13, 4, 4, 4, 4);
     insere_aresta(g, 12, 14, 10, 10, 10, 10);
     insere_aresta(g, 13, 14, 1, 1, 1, 1);
-
     arvores_multicast(g, 0, 'd', 10, R, 4);
-
-    free(R);
+    busca_largura(g, 0);
+    DFS(g, 0);
     libera_grafo(&g);
     return 0;
 }
