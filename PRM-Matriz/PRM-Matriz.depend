@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1498312361 source:c:\users\jorge\documents\programação\ufu\c\prm-matriz\fila.c
+	<stdio.h>
+	"fila.h"
+
+1498256956 c:\users\jorge\documents\programação\ufu\c\prm-matriz\fila.h
+
+1498484802 source:c:\users\jorge\documents\programação\ufu\c\prm-matriz\main.c
+	<stdio.h>
+	"grafo.h"
+
+1498484452 c:\users\jorge\documents\programação\ufu\c\prm-matriz\grafo.h
+
+1498448412 source:c:\users\jorge\documents\programação\ufu\c\prm-matriz\grafo.c
+	<stdio.h>
+	<limits.h>
+	"grafo.h"
+	"fila.h"
+
+1498312361 source:c:\users\jorge\documents\programação\ufu\c\prm-matriz - copia\fila.c
+	<stdio.h>
+	"fila.h"
+
+1498256956 c:\users\jorge\documents\programação\ufu\c\prm-matriz - copia\fila.h
+
+1498484625 source:c:\users\jorge\documents\programação\ufu\c\prm-matriz - copia\grafo.c
+	<stdio.h>
+	<limits.h>
+	"grafo.h"
+	"fila.h"
+
+1498484452 c:\users\jorge\documents\programação\ufu\c\prm-matriz - copia\grafo.h
+
+1498484733 source:c:\users\jorge\documents\programação\ufu\c\prm-matriz - copia\main.c
+	<stdio.h>
+	"grafo.h"
+
