@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "fila.h"
 
 struct fila{
@@ -98,4 +99,10 @@ void mostra_fila(Fila *f){
         aux = aux->prox;
     }
     printf(":CAUDA\n");
+}
+
+void libera_fila(Fila *f){
+    while(f->head != NULL)
+        desenfileira(f);
+    free(f);
 }
