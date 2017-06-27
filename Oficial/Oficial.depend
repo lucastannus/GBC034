@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1498516686 source:d:\trabalho\ufu\aed2\oficial\fila.c
+	<stdio.h>
+	<stdlib.h>
+	"fila.h"
+
+1498516686 d:\trabalho\ufu\aed2\oficial\fila.h
+
+1498524301 source:d:\trabalho\ufu\aed2\oficial\grafo.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+	"grafo.h"
+	"fila.h"
+
+1498517035 d:\trabalho\ufu\aed2\oficial\grafo.h
+
+1498524761 source:d:\trabalho\ufu\aed2\oficial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"grafo.h"
+
